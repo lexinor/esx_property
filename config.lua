@@ -1,7 +1,7 @@
 Config = {}
 
 -------- Note: Can Cause quite abit of clutter ---------------
-Config.ForSaleBlips = false -- Add Blips to For Sale Properties
+Config.ForSaleBlips = true -- Add Blips to For Sale Properties
 Config.OwnedBlips = true -- Add blips for Owned Properties
 ---------------------------------------------------------------
 
@@ -51,7 +51,7 @@ Config.Raiding = {
 
 --------------------- Garage Settings ---------------------------------
 Config.Garage = {
-  Enabled = true, -- Enable/Disable Garage Default: true
+  Enabled = false, -- Enable/Disable Garage Default: true
   OwnedVehiclesOnly = true, -- Only allow owned vehicles to be stored Default: true
   MySQLquery = "UPDATE `owned_vehicles` SET `stored` = ? WHERE `plate` = ?" -- MySQL Query to store vehicles `?` = True/false, Vehicle Plate
 }
@@ -121,7 +121,8 @@ Config.CCTV = {
 -------- Groups allowed to use Admin Functions -------------------
 Config.AllowedGroups = {
   -- Note: Superadmin is not a group In ESX
-  "admin"
+  "admin",
+  "superadmin"
 }
 
 ------------------Interacting With Wardrobe Markers ------------------------------
@@ -153,22 +154,22 @@ end
 
 --------------------- Real Estate Settings ----------
 Config.PlayerManagement = {                          
-  Enabled = false, -- Enable/Disable Player Management Default: true
+  Enabled = true, -- Enable/Disable Player Management Default: true
   job = "realestateagent", -- Job Required to Manage Players Default: "realestateagent"                 
-  joblabel = "Estate Agent", -- Job Label Default: "Estate Agent"          
+  joblabel = "Agent Immobilier", -- Job Label Default: "Estate Agent"          
   society = "society_realestateagent", -- Society Required to Manage Players Default: "society_realestateagent"
   SalePercentage = 0.25, -- Sale Percentage Default: 0.25 -- Note: This is a percentage of the price of the house
   jobRanks = {
     {
       grade = 0,
       name = "trainee",
-      label = "Trainee",
+      label = "Debutant",
       salary = 15,
     },
     {
       grade = 1,
       name = "agent",
-      label = "Experienced Agent",
+      label = "Agent Expérimenté",
       salary = 30,
     },
     {
@@ -185,14 +186,14 @@ Config.PlayerManagement = {
     SellProperty = 0, -- Sell Property to players
     ToggleCCTV = 1, -- Change CCTV settings
     ToggleLock = 0, -- Change Lock Settings
-    ToggleGarage = 1, -- Change Garage Settings
-    SetPropertyName =1, -- Change Property Name
-    RemovePropertyName = 1, -- Remove Property Name
-    SetPropertyPrice = 0, -- Change Property Price
+    ToggleGarage = 2, -- Change Garage Settings
+    SetPropertyName = 2, -- Change Property Name
+    RemovePropertyName = 2, -- Remove Property Name
+    SetPropertyPrice = 1, -- Change Property Price
     ChangeInterior = 1, -- Change Interior
     ResetFurniture = 0, -- Reset Furniture
-    EvictOwner = 0,   -- Evict Owners
-    ChangeEntrance = 0,  -- Change Entrance
+    EvictOwner = 1,   -- Evict Owners
+    ChangeEntrance = 1,  -- Change Entrance
     EditInteriorPositions = 1,  -- Edit Interior Positions
     ManagePropertiesFromQuickActions = 1, -- Manage Properties From Quick Actions (F6)
   },
@@ -210,7 +211,7 @@ Config.FurnitureStores = {
     Catagories = {"Decorations", "Tables", "Sofas", "Bedroom"}
   },
   {
-    title = "Electronics Store",
+    title = "Magasin d'électroniques",
     Catagories = {"Electronics","Kitchen"}
   },
 }
