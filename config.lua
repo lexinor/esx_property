@@ -7,7 +7,7 @@ Config.OwnedBlips = true -- Add blips for Owned Properties
 
 --------------------- General Settings ---------------------------------
 Config.Locale = GetConvar('esx:locale', 'en')
-Config.Shells = false -- Enable/Disable Shell Interiors Default: false
+Config.Shells = true -- Enable/Disable Shell Interiors Default: false
 Config.SaveInterval = 5 -- Interval in Minutes to Save Properties
 Config.CanAlwaysExit = true -- Disabling this allows players to be locked in
 Config.OwnerCanAlwaysEnter = true -- Disabling this means the owner can't enter the property unless door is unlocked
@@ -154,7 +154,7 @@ end
 
 --------------------- Real Estate Settings ----------
 Config.PlayerManagement = {                          
-  Enabled = true, -- Enable/Disable Player Management Default: true
+  Enabled = false, -- Enable/Disable Player Management Default: true
   job = "realestateagent", -- Job Required to Manage Players Default: "realestateagent"                 
   joblabel = "Agent Immobilier", -- Job Label Default: "Estate Agent"          
   society = "society_realestateagent", -- Society Required to Manage Players Default: "society_realestateagent"
